@@ -2,6 +2,7 @@ package com.ys.egou.mapper.user;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.ys.egou.model.user.EgouUser;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,11 @@ class EgouUserMapperTest {
     EgouUserMapper egouUserMapper;
 
     @Test
-    public void insertUser() {
-        assertEquals(false, false);
+    public void testSelectByPrimaryKey() {
+//        assertEquals(false, false);
+        int uid = 2;
+        EgouUser u = egouUserMapper.selectByPrimaryKey(uid);
+        assertNotNull(u);
     }
 
 
