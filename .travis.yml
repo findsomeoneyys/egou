@@ -1,5 +1,12 @@
 language: java
 jdk: oraclejdk8
+services:
+  - mysql
+
+before_install:
+  - mysql -e "CREATE DATABASE IF NOT EXISTS egou_test default character set utf8mb4 collate utf8mb4_unicode_ci;"
+  - mysql -e "create user 'egou'@'localhost' identified by 'egou123456';"
+  - mysql -e "grant all privileges on egou_test.* to 'egou'@'localhost';flush privileges;"
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
