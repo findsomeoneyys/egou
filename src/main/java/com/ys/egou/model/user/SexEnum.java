@@ -1,9 +1,9 @@
 package com.ys.egou.model.user;
 
 public enum SexEnum {
-    UNKNOWN("位置"),
-    MALE("支付中"),
-    FEMALE("支付成功");
+    UNKNOWN("未知"),
+    MALE("男"),
+    FEMALE("女");
 
     private String value;
     SexEnum(String value) {
