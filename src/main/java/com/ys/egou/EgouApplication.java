@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.ys.egou")
+@MapperScan("com.ys.egou.mapper")
 public class EgouApplication {
 
     public static void main(String[] args) {
