@@ -1,7 +1,6 @@
 package com.ys.egou.mapper.user;
 
 import com.ys.egou.model.user.User;
-import org.apache.ibatis.annotations.Mapper;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
