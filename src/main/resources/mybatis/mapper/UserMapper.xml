@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ys.egou.mapper.user.EgouUserMapper">
-  <resultMap id="BaseResultMap" type="com.ys.egou.model.user.EgouUser">
+<mapper namespace="com.ys.egou.mapper.user.UserMapper">
+  <resultMap id="BaseResultMap" type="com.ys.egou.model.user.User">
     <!--@mbg.generated-->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
@@ -32,7 +32,7 @@
     delete from egou_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ys.egou.model.user.EgouUser" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ys.egou.model.user.User" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into egou_user (username, `password`, sex, 
       birthday, nickname, mobile, 
@@ -43,7 +43,7 @@
       #{avatar,jdbcType=VARCHAR}, #{addTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{deleted,jdbcType=BOOLEAN})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ys.egou.model.user.EgouUser" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ys.egou.model.user.User" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into egou_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -111,7 +111,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ys.egou.model.user.EgouUser">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ys.egou.model.user.User">
     <!--@mbg.generated-->
     update egou_user
     <set>
@@ -148,7 +148,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ys.egou.model.user.EgouUser">
+  <update id="updateByPrimaryKey" parameterType="com.ys.egou.model.user.User">
     <!--@mbg.generated-->
     update egou_user
     set username = #{username,jdbcType=VARCHAR},

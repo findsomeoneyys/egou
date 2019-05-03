@@ -4,7 +4,7 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class EgouUser {
+public class User {
     private Integer id;
 
     /**

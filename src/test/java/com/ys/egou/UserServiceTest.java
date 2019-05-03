@@ -1,8 +1,8 @@
 package com.ys.egou;
 
-import com.ys.egou.model.user.EgouUser;
+import com.ys.egou.model.user.User;
 import com.ys.egou.model.user.SexEnum;
-import com.ys.egou.service.user.EgouUserService;
+import com.ys.egou.service.user.UserService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,21 +15,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-class EgouUserServiceTest {
+class UserServiceTest {
 
     @Autowired
-    EgouUserService egouUserService;
+    UserService userService;
 
     @Test
     public void testSelectByPrimaryKey() {
         int uid = 1;
-        EgouUser u = egouUserService.selectByPrimaryKey(uid);
+        User u = userService.selectByPrimaryKey(uid);
         assertNotNull(u);
     }
 
     @Test
     public void testInsertUser() {
-        EgouUser user = new EgouUser();
+        User user = new User();
         user.setUsername("testU");
         user.setPassword("123");
         user.setSex(SexEnum.FEMALE);
@@ -41,14 +41,14 @@ class EgouUserServiceTest {
         user.setUpdateTime(new Date());
         user.setDeleted(false);
 
-        egouUserService.insert(user);
+        userService.insert(user);
         assertTrue(user.getId() > 0);
     }
 
     @Test
     public void testDeleteByPrimaryKey() {
         int uid = 2;
-        egouUserService.deleteByPrimaryKey(uid);
-        assertNull(egouUserService.selectByPrimaryKey(uid));
+        userService.deleteByPrimaryKey(uid);
+        assertNull(userService.selectByPrimaryKey(uid));
     }
 }
