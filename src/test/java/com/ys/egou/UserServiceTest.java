@@ -30,14 +30,14 @@ class UserServiceTest {
     @Test
     public void testInsertUser() {
         User user = new User();
-        user.setUsername("testU");
+        user.setName("testU");
         user.setPassword("123");
         user.setSex(SexEnum.FEMALE);
         user.setBirthday(new Date());
         user.setNickname("nickname");
+        user.setEmail("zxc@163.com");
         user.setMobile("123123");
         user.setAvatar("");
-        user.setAddTime(new Date());
         user.setUpdateTime(new Date());
         user.setDeleted(false);
 
