@@ -1,7 +1,7 @@
 package com.ys.egou.model.user;
 
 public enum genderEnum {
-    UNKNOWN("未知"),
+    OTHER("未知"),
     MALE("男"),
     FEMALE("女");
 

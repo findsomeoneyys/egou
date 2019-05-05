@@ -29,7 +29,7 @@ public class UserService {
     }
 
     public boolean register(User user) {
-        return userMapper.insert(user) > 0;
+        return userMapper.insertSelective(user) > 0;
     }
 
     public List<User> findAll() {
@@ -45,6 +45,7 @@ public class UserService {
         return userMapper.updateByPrimaryKeySelective(record);
     }
 }
+
 
 
 

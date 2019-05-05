@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>注册</title>
+</head>
+<body>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center mb-5">欢迎</h2>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card border-secondary">
+                        <!--<div class="card-header">-->
+                            <!--<h3 class="mb-0 my-2">注册</h3>-->
+                        <!--</div>-->
+                        <div class="card-body">
+                            <form class="form" role="form" autocomplete="off" action="#" th:action="@{/register}" th:object="${user}" method="post">
+                                <div class="form-group">
+                                    <label for="name">姓名</label>
+                                    <input type="text" class="form-control" th:field="*{name}" id="name" placeholder="Name">
+                                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nickname">别名</label>
+                                    <input type="text" class="form-control" th:field="*{nickname}" id="nickname" placeholder="Nickname">
+                                    <span th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="genderFormControlSelect">性别</label>
+                                    <select class="form-control" id="genderFormControlSelect" th:field="*{gender}">
+                                        <option value="MALE">男</option>
+                                        <option value="FEMALE">女</option>
+                                        <option value="OTHER">其他</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">邮箱</label>
+                                    <input type="email" class="form-control" th:field="*{email}" id="email" required="">
+                                    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">密码</label>
+                                    <input type="password" class="form-control" th:field="*{password}" id="password" placeholder="请输入你的密码">
+                                    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="birthday">生日</label>
+                                    <input type="date" class="form-control" th:field="*{birthday}" id="birthday" placeholder="Birthday">
+                                    <span th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">手机号</label>
+                                    <input type="text" class="form-control" th:field="*{mobile}" id="mobile" placeholder="mobile">
+                                    <span th:if="${#fields.hasErrors('mobile')}" th:errors="*{mobile}"></span>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success btn-lg float-right">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/row-->
+
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</html>

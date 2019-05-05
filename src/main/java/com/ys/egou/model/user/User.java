@@ -2,7 +2,6 @@ package com.ys.egou.model.user;
 
 import java.util.Date;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
 public class User {
@@ -26,7 +25,6 @@ public class User {
     /**
      * 生日
      */
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
 
     /**
