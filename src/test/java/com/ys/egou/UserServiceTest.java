@@ -1,7 +1,7 @@
 package com.ys.egou;
 
 import com.ys.egou.model.user.User;
-import com.ys.egou.model.user.SexEnum;
+import com.ys.egou.model.user.genderEnum;
 import com.ys.egou.service.user.UserService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,7 +32,7 @@ class UserServiceTest {
         User user = new User();
         user.setName("testU");
         user.setPassword("123");
-        user.setSex(SexEnum.FEMALE);
+        user.setGender(genderEnum.FEMALE);
         user.setBirthday(new Date());
         user.setNickname("nickname");
         user.setEmail("zxc@163.com");

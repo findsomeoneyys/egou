@@ -2,6 +2,7 @@ package com.ys.egou.model.user;
 
 import java.util.Date;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
 public class User {
@@ -18,13 +19,14 @@ public class User {
     private String password;
 
     /**
-     * 性别：UNKNOWN 未知， MALE男， FEMALE 女
+     * 性别：OTHER 其他， MALE男， FEMALE 女
      */
-    private SexEnum sex;
+    private genderEnum gender;
 
     /**
      * 生日
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
 
     /**

@@ -37,6 +37,14 @@ public class UserService {
     }
 
 
+    public int insertSelective(User record) {
+        return userMapper.insertSelective(record);
+    }
+
+    public int updateByPrimaryKeySelective(User record) {
+        return userMapper.updateByPrimaryKeySelective(record);
+    }
 }
+
 
 
