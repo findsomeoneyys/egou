@@ -32,6 +32,7 @@ class UserServiceTest {
     public void testInsertUser() {
         User user = new User();
         user.setName("testU");
+        user.setSalt("123zxc");
         user.setPassword("123");
         user.setGender(GenderEnum.FEMALE);
         user.setBirthday(new Date());

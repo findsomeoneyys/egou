@@ -14,5 +14,5 @@ CREATE TABLE `egou_user` (
   `update_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   `deleted` tinyint(1) DEFAULT '0' COMMENT '逻辑删除',
   PRIMARY KEY (`id`),
-  UNIQUE (email)
+  CONSTRAINT user_email_unqiue UNIQUE (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
