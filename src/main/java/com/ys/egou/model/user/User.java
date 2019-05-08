@@ -18,9 +18,14 @@ public class User {
     private String password;
 
     /**
+     * 盐
+     */
+    private String salt;
+
+    /**
      * 性别：OTHER 其他， MALE男， FEMALE 女
      */
-    private genderEnum gender;
+    private GenderEnum gender;
 
     /**
      * 生日
